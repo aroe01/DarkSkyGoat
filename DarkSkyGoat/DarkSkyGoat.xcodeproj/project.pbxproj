@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		3A8E7342219BFCB10053931B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E7341219BFCB10053931B /* AppDelegate.swift */; };
-		3A8E7344219BFCB10053931B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E7343219BFCB10053931B /* ViewController.swift */; };
 		3A8E7347219BFCB10053931B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8E7345219BFCB10053931B /* Main.storyboard */; };
 		3A8E7349219BFCB60053931B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A8E7348219BFCB60053931B /* Assets.xcassets */; };
 		3A8E734C219BFCB60053931B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8E734A219BFCB60053931B /* LaunchScreen.storyboard */; };
 		3A8E7357219BFCB60053931B /* DarkSkyGoatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E7356219BFCB60053931B /* DarkSkyGoatTests.swift */; };
+		3A8E7362219BFF3D0053931B /* ForecastApiSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E7361219BFF3D0053931B /* ForecastApiSession.swift */; };
+		3A8E7364219C038F0053931B /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E7363219C038F0053931B /* ForecastViewController.swift */; };
+		3A8E7366219C0C9A0053931B /* DailyForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E7365219C0C9A0053931B /* DailyForecastData.swift */; };
+		3A8E7368219C0D8F0053931B /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E7367219C0D8F0053931B /* Common.swift */; };
+		3A8E736F219C0E930053931B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A8E736E219C0E930053931B /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +32,6 @@
 /* Begin PBXFileReference section */
 		3A8E733E219BFCB10053931B /* DarkSkyGoat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkSkyGoat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8E7341219BFCB10053931B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3A8E7343219BFCB10053931B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3A8E7346219BFCB10053931B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A8E7348219BFCB60053931B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A8E734B219BFCB60053931B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +39,11 @@
 		3A8E7352219BFCB60053931B /* DarkSkyGoatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DarkSkyGoatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8E7356219BFCB60053931B /* DarkSkyGoatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkyGoatTests.swift; sourceTree = "<group>"; };
 		3A8E7358219BFCB60053931B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A8E7361219BFF3D0053931B /* ForecastApiSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastApiSession.swift; sourceTree = "<group>"; };
+		3A8E7363219C038F0053931B /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
+		3A8E7365219C0C9A0053931B /* DailyForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastData.swift; sourceTree = "<group>"; };
+		3A8E7367219C0D8F0053931B /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		3A8E736E219C0E930053931B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,7 @@
 		3A8E7335219BFCB10053931B = {
 			isa = PBXGroup;
 			children = (
+				3A8E736E219C0E930053931B /* Default-568h@2x.png */,
 				3A8E7340219BFCB10053931B /* DarkSkyGoat */,
 				3A8E7355219BFCB60053931B /* DarkSkyGoatTests */,
 				3A8E733F219BFCB10053931B /* Products */,
@@ -78,11 +87,13 @@
 			isa = PBXGroup;
 			children = (
 				3A8E7341219BFCB10053931B /* AppDelegate.swift */,
-				3A8E7343219BFCB10053931B /* ViewController.swift */,
-				3A8E7345219BFCB10053931B /* Main.storyboard */,
-				3A8E7348219BFCB60053931B /* Assets.xcassets */,
-				3A8E734A219BFCB60053931B /* LaunchScreen.storyboard */,
+				3A8E7367219C0D8F0053931B /* Common.swift */,
 				3A8E734D219BFCB60053931B /* Info.plist */,
+				3A8E736C219C0DED0053931B /* ViewControllers */,
+				3A8E736B219C0DDC0053931B /* Models */,
+				3A8E736A219C0DCA0053931B /* Resources */,
+				3A8E7369219C0DB20053931B /* Storyboards */,
+				3A8E736D219C0E000053931B /* Sessions */,
 			);
 			path = DarkSkyGoat;
 			sourceTree = "<group>";
@@ -94,6 +105,47 @@
 				3A8E7358219BFCB60053931B /* Info.plist */,
 			);
 			path = DarkSkyGoatTests;
+			sourceTree = "<group>";
+		};
+		3A8E7369219C0DB20053931B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3A8E7345219BFCB10053931B /* Main.storyboard */,
+				3A8E734A219BFCB60053931B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		3A8E736A219C0DCA0053931B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3A8E7348219BFCB60053931B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3A8E736B219C0DDC0053931B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3A8E7365219C0C9A0053931B /* DailyForecastData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3A8E736C219C0DED0053931B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A8E7363219C038F0053931B /* ForecastViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3A8E736D219C0E000053931B /* Sessions */ = {
+			isa = PBXGroup;
+			children = (
+				3A8E7361219BFF3D0053931B /* ForecastApiSession.swift */,
+			);
+			path = Sessions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A8E734C219BFCB60053931B /* LaunchScreen.storyboard in Resources */,
+				3A8E736F219C0E930053931B /* Default-568h@2x.png in Resources */,
 				3A8E7349219BFCB60053931B /* Assets.xcassets in Resources */,
 				3A8E7347219BFCB10053931B /* Main.storyboard in Resources */,
 			);
@@ -197,8 +250,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A8E7344219BFCB10053931B /* ViewController.swift in Sources */,
+				3A8E7364219C038F0053931B /* ForecastViewController.swift in Sources */,
 				3A8E7342219BFCB10053931B /* AppDelegate.swift in Sources */,
+				3A8E7366219C0C9A0053931B /* DailyForecastData.swift in Sources */,
+				3A8E7368219C0D8F0053931B /* Common.swift in Sources */,
+				3A8E7362219BFF3D0053931B /* ForecastApiSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
