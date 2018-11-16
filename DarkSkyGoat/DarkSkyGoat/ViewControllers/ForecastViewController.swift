@@ -8,22 +8,67 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
 class ForecastViewController : UIViewController{
     
-    private var forecastSession : ForecastApiSession = ForecastApiSession()
+    @IBOutlet var tableView : UITableView?
+    
+    private let locationManager : CLLocationManager = CLLocationManager()
+    private let forecastSession : ForecastApiSession = ForecastApiSession()
+    
+    private var forecasts : [DailyForecastData]?
     
     override func viewDidLoad() {
-        self.getForecast()
+        self.locationManager.delegate = self
+        //hiding seperator for empty cell
+        self.tableView?.tableFooterView = UIView()
     }
     
-    private func getForecast(){        
-        self.forecastSession.GetLocationForecast { (data) in
+    private func getForecast(){
+        guard let location = self.locationManager.location else{return}
+        self.forecastSession.GetLocationForecast(location: location) { (data) in
             guard let dailyForecastData = data else{
                 print("No location forecast from ForecastApiSession")
                 return
             }
             print("YAY")
+            self.forecasts = dailyForecastData
+            DispatchQueue.main.async {
+                self.tableView?.reloadData()
+            }
         }
     }
+    
+    @IBAction func onGetLocationButton(){
+        self.requestLocationPermission()
+    }
+    private func requestLocationPermission(){        
+        self.locationManager.requestWhenInUseAuthorization()
+    }
+}
+
+extension ForecastViewController : CLLocationManagerDelegate{
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse{
+            self.getForecast()
+        }
+    }
+}
+
+extension ForecastViewController : UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.forecasts?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ForecastTableCell", for: indexPath)
+        if let forecastCell = cell as? ForecastViewTableCell,
+            let forecastData = self.forecasts?[indexPath.row]{
+            forecastCell.setup(forecastData: forecastData)
+        }
+        return cell
+    }
+    
+    
 }

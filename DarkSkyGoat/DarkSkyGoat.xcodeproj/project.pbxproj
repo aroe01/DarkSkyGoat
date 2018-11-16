@@ -17,6 +17,7 @@
 		3A8E7366219C0C9A0053931B /* DailyForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E7365219C0C9A0053931B /* DailyForecastData.swift */; };
 		3A8E7368219C0D8F0053931B /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E7367219C0D8F0053931B /* Common.swift */; };
 		3A8E736F219C0E930053931B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A8E736E219C0E930053931B /* Default-568h@2x.png */; };
+		3A8E7371219E7A4A0053931B /* ForecastViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E7370219E7A4A0053931B /* ForecastViewTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		3A8E7365219C0C9A0053931B /* DailyForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastData.swift; sourceTree = "<group>"; };
 		3A8E7367219C0D8F0053931B /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		3A8E736E219C0E930053931B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3A8E7370219E7A4A0053931B /* ForecastViewTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				3A8E7341219BFCB10053931B /* AppDelegate.swift */,
 				3A8E7367219C0D8F0053931B /* Common.swift */,
 				3A8E734D219BFCB60053931B /* Info.plist */,
+				3A8E7372219E7A620053931B /* Views */,
 				3A8E736C219C0DED0053931B /* ViewControllers */,
 				3A8E736B219C0DDC0053931B /* Models */,
 				3A8E736A219C0DCA0053931B /* Resources */,
@@ -146,6 +149,14 @@
 				3A8E7361219BFF3D0053931B /* ForecastApiSession.swift */,
 			);
 			path = Sessions;
+			sourceTree = "<group>";
+		};
+		3A8E7372219E7A620053931B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A8E7370219E7A4A0053931B /* ForecastViewTableCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A8E7364219C038F0053931B /* ForecastViewController.swift in Sources */,
+				3A8E7371219E7A4A0053931B /* ForecastViewTableCell.swift in Sources */,
 				3A8E7342219BFCB10053931B /* AppDelegate.swift in Sources */,
 				3A8E7366219C0C9A0053931B /* DailyForecastData.swift in Sources */,
 				3A8E7368219C0D8F0053931B /* Common.swift in Sources */,

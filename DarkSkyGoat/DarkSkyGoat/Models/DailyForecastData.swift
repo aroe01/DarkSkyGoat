@@ -51,10 +51,23 @@ struct DailyForecastData {
     var Time : TimeInterval
     var TemperatureHigh : Double
     var TemperatureLow : Double
+    var Summary : String
+    
+    var TimeAsDate : Date
+    var DayReadable : String
+    
     
     init(_ json : JSONDictionary){
         self.Time = json["time"] as? TimeInterval ?? 0
         self.TemperatureHigh = json["temperatureHigh"] as? Double ?? 0
         self.TemperatureLow = json["temperatureLow"] as? Double ?? 0
+        self.Summary = json["summary"] as? String ?? ""
+        self.TimeAsDate = Date(timeIntervalSince1970: self.Time)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "EEEE"
+        self.DayReadable = dateFormatter.string(from: self.TimeAsDate)
     }
 }

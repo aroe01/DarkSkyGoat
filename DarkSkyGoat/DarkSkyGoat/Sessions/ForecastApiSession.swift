@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 class ForecastApiSession : NSObject{
     
@@ -25,7 +26,7 @@ class ForecastApiSession : NSObject{
         return Bundle.main.object(forInfoDictionaryKey: "DarkSkyApiKey") as? String
     }()
     
-    fileprivate func run(withUrl : URL, callback : @escaping ([DailyForecastData]?)->() ){
+    private func run(withUrl : URL, callback : @escaping ([DailyForecastData]?)->() ){
         sessionTask?.cancel()
         if  var urlComponents = URLComponents(url: withUrl, resolvingAgainstBaseURL: true) {
             
@@ -63,11 +64,13 @@ class ForecastApiSession : NSObject{
         return returnArray
     }
     
-    func GetLocationForecast(callback : @escaping ([DailyForecastData]?)->() ){
-        guard let apiKey = self.apiKey,
-        let forecastUrl = URL(string: "/forecast/\(apiKey)/37.8267,-122.4233", relativeTo: rootUrl)
-            else {return}
-
+    func GetLocationForecast(location : CLLocation, callback : @escaping ([DailyForecastData]?)->() ){
+        guard let apiKey = self.apiKey else {return}
+        
+        let latitude = location.coordinate.latitude
+        let longitude = location.coordinate.longitude
+        
+        guard let forecastUrl = URL(string: "/forecast/\(apiKey)/\(latitude),\(longitude)", relativeTo: rootUrl) else {return}
         
         self.run(withUrl: forecastUrl, callback: callback)
     }
