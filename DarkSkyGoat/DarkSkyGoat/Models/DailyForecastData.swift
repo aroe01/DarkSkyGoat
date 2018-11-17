@@ -47,6 +47,7 @@ import Foundation
  apparentTemperatureMax: 63.1,
  apparentTemperatureMaxTime: 1542150000*/
 
+//Model representing daily forecast data
 struct DailyForecastData {
     var Time : TimeInterval
     var TemperatureHigh : Double
@@ -64,12 +65,14 @@ struct DailyForecastData {
         self.Summary = json["summary"] as? String ?? ""
         self.TimeAsDate = Date(timeIntervalSince1970: self.Time)
         
+        //parse time and save day of the week as string
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone.current
         dateFormatter.locale = NSLocale.current
         dateFormatter.dateFormat = "EEEE"
         self.DayReadable = dateFormatter.string(from: self.TimeAsDate)
         
+        //save forecast icon
         if let iconString = json["icon"] as? String,
             let icon = ForecastIcon(rawValue: iconString){
             self.Icon = icon

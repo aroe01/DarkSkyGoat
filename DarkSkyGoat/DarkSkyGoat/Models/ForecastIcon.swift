@@ -11,6 +11,7 @@ import UIKit
 /*icon
  clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, or partly-cloudy-night
  */
+//Enum of all possible forecast items
 enum ForecastIcon : String{
     case clearDay = "clear-day"
     case clearNight = "clear-night"
@@ -24,6 +25,7 @@ enum ForecastIcon : String{
     case partlyCloudyNight = "partly-cloudy-night"
 }
 
+//convenience initializer to create UIImage from enum
 extension UIImage{
     convenience init(forecastIcon : ForecastIcon) {
         self.init(named: forecastIcon.rawValue)!

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+//Table cells for the daily forecast
 class ForecastViewTableCell : UITableViewCell{
     @IBOutlet var DayLabel : UILabel?
     @IBOutlet var HighTempLabel :UILabel?

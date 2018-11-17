@@ -8,4 +8,5 @@
 
 import Foundation
 
+//Typealias to be more concise
 typealias JSONDictionary = [String: Any]

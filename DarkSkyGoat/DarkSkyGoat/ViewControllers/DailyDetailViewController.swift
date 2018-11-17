@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+//Daily Detail VC displays information for specific day
 class DailyDetailViewController : UIViewController{
     @IBOutlet var ForecastImageView : UIImageView?
     @IBOutlet var SummaryLabel : UILabel?
