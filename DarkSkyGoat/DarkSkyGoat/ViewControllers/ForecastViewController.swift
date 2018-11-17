@@ -32,7 +32,6 @@ class ForecastViewController : UIViewController{
                 print("No location forecast from ForecastApiSession")
                 return
             }
-            print("YAY")
             self.forecasts = dailyForecastData
             DispatchQueue.main.async {
                 self.tableView?.reloadData()
@@ -51,7 +50,7 @@ class ForecastViewController : UIViewController{
 extension ForecastViewController : CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse{
-            self.getForecast()
+            self.getForecast()            
         }
     }
 }
@@ -70,5 +69,11 @@ extension ForecastViewController : UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let forecastData = self.forecasts?[indexPath.row],
+            let dailyDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "DailyDetailViewController") as? DailyDetailViewController else {return}
+        
+        dailyDetailVC.setup(forecastData)
+        self.navigationController?.pushViewController(dailyDetailVC, animated: true)
+    }
 }

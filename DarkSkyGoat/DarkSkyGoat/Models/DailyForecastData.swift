@@ -55,7 +55,7 @@ struct DailyForecastData {
     
     var TimeAsDate : Date
     var DayReadable : String
-    
+    var Icon : ForecastIcon
     
     init(_ json : JSONDictionary){
         self.Time = json["time"] as? TimeInterval ?? 0
@@ -69,5 +69,13 @@ struct DailyForecastData {
         dateFormatter.locale = NSLocale.current
         dateFormatter.dateFormat = "EEEE"
         self.DayReadable = dateFormatter.string(from: self.TimeAsDate)
+        
+        if let iconString = json["icon"] as? String,
+            let icon = ForecastIcon(rawValue: iconString){
+            self.Icon = icon
+        }else{
+            self.Icon = .cloudy
+            print("FAIL loading forecast icon")
+        }
     }
 }
